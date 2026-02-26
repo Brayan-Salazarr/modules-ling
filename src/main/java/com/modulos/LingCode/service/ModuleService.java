@@ -13,19 +13,12 @@ public class ModuleService {
     private List<ModuleEntity> modules = new ArrayList<>();
 
     public ModuleService() {
-        modules.add(new ModuleEntity(1L, "GitHub", false));
-        modules.add(new ModuleEntity(2L, "MySQL", false));
-        modules.add(new ModuleEntity(3L, "Java", false));
+        modules.add(new ModuleEntity("1", "GitHub"));
+        modules.add(new ModuleEntity("2", "MySQL"));
+        modules.add(new ModuleEntity("3", "Java"));
     }
 
     public List<ModuleEntity> getAllModules() {
         return modules;
-    }
-
-    public void completeModule(String id) {
-        modules.stream()
-                .filter(m -> m.getId().equals(id))
-                .findFirst()
-                .ifPresent(m -> m.setCompleted(true));
     }
 }
