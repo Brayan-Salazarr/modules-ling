@@ -24,7 +24,7 @@ public class LessonService {
         );
 
         ExerciseEntity exercise1 =
-            new ExerciseEntity("¿Qué comando inicia un repositorio en Git?", options1);
+            new ExerciseEntity("Init", options1);
 
         LessonEntity lesson1 = new LessonEntity(
             "1",
