@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.modulos.LingCode.dto.AnswerRequest;
 import com.modulos.LingCode.model.LessonEntity;
 import com.modulos.LingCode.service.LessonService;
 
@@ -30,12 +31,16 @@ public class LessonController {
         return lessonService.getLessonsByModule(moduleId);
     }
 
-    @PostMapping("/lessons/{lessonId}/answer")
-    public boolean submitAnswer(
-            @RequestParam String userId,
-            @PathVariable String lessonId,
-            @RequestBody String answer) {
+   @PostMapping("/lessons/{lessonId}/answer")
+public boolean submitAnswer(
+        @PathVariable String lessonId,
+        @RequestBody AnswerRequest request) {
 
-        return lessonService.submitAnswer(userId, lessonId, answer);
-    }
+    return lessonService.submitAnswer(
+            request.getUserId(),
+            lessonId,
+            request.getExerciseIndex(),
+            request.getAnswer()
+    );
+}
 }
