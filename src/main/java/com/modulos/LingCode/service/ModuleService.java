@@ -34,6 +34,7 @@ public class ModuleService {
                 true,
                 true,
                 Arrays.asList("git", "github", "version-control"),
+                50,
                 List.of()
         ));
 
@@ -56,6 +57,7 @@ public class ModuleService {
                 true,
                 false,
                 Arrays.asList("sql", "mysql", "database"),
+                0,
                 List.of("1")
         ));
     }

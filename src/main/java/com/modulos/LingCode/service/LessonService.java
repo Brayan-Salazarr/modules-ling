@@ -29,7 +29,7 @@ public class LessonService {
         LessonEntity lesson1 = new LessonEntity(
             "1",
             "1", // moduleId
-            "Introducción a Git",
+            "Comandos GitHub",
             20,
             List.of(exercise1)
         );

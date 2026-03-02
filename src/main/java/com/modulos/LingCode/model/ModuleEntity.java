@@ -22,6 +22,7 @@ public class ModuleEntity {
     private boolean is_published;
     private boolean is_featured;
     private List<String> tags;
+    private int progressPercentaje;
     private List<String> prerequisiteModuleIds;
 
     public ModuleEntity(String id,
@@ -42,6 +43,7 @@ public class ModuleEntity {
             boolean is_published,
             boolean is_featured,
             List<String> tags,
+            int progressPercentaje,
             List<String> prerequisiteModuleIds) {
         this.id = id;
         this.title = title;
@@ -61,6 +63,7 @@ public class ModuleEntity {
         this.is_published = is_published;
         this.is_featured = is_featured;
         this.tags = tags;
+        this. progressPercentaje = progressPercentaje;
         this.prerequisiteModuleIds = prerequisiteModuleIds;
     }
 
@@ -82,5 +85,6 @@ public class ModuleEntity {
     public boolean isIs_published() { return is_published; }
     public boolean isIs_featured() { return is_featured; }
     public List<String> getTags() { return tags; }
+    public int progressPercentaje() { return progressPercentaje; }
     public List<String> getPrerequisiteModuleIds() { return prerequisiteModuleIds; }
 }
