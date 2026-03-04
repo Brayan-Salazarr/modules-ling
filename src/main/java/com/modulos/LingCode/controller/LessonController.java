@@ -2,6 +2,7 @@ package com.modulos.LingCode.controller;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,16 +32,16 @@ public class LessonController {
         return lessonService.getLessonsByModule(moduleId);
     }
 
-   @PostMapping("/lessons/{lessonId}/answer")
-public boolean submitAnswer(
-        @PathVariable String lessonId,
-        @RequestBody AnswerRequest request) {
+    @PostMapping("/lessons/{lessonId}/answer")
+    public boolean submitAnswer(
+            @PathVariable String lessonId,
+            @RequestBody AnswerRequest request) {
 
-    return lessonService.submitAnswer(
-            request.getUserId(),
-            lessonId,
-            request.getExerciseIndex(),
-            request.getAnswer()
-    );
-}
+        return lessonService.submitAnswer(
+                request.getUserId(),
+                lessonId,
+                request.getExerciseIndex(),
+                request.getAnswer());
+    }
+
 }

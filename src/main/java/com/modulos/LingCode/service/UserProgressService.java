@@ -25,13 +25,16 @@ public class UserProgressService  {
         return progressStore.computeIfAbsent(userId, UserProgress::new);
     }
 
-    public void completeLesson(String userId, String lessonId, int xp) {
+    public UserProgress completeLesson(String userId, String lessonId, int xp) {
         UserProgress progress = getOrCreateProgress(userId);
 
         if (!progress.getCompletedLessons().contains(lessonId)) {
             progress.completeLesson(lessonId);
             progress.addXp(xp);
+            progress.updateStreak();
         }
+
+        return progress;
     }
 
     public UserProgress getProgress(String userId) {

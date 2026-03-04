@@ -59,10 +59,10 @@ public class LessonService {
                                 "Relaciona el comando con su significado",
                                 "match",
                                 List.of(
-                                                new MatchPair("Git clone", "Estado"),
-                                                new MatchPair("Git status", "Iniciar"),
+                                                new MatchPair("Git clone", "Clonar"),
+                                                new MatchPair("Git status", "Estado"),
                                                 new MatchPair("Git add", "Guardar"),
-                                                new MatchPair("Git init", "Clonar"),
+                                                new MatchPair("Git init", "Iniciar"),
                                                 new MatchPair("Git commit", "Confirmar")));
 
                 LessonEntity lesson1 = new LessonEntity(
