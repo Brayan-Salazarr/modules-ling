@@ -4,10 +4,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.modulos.LingCode.dto.CompleteLessonRequest;
 import com.modulos.LingCode.model.UserProgress;
 import com.modulos.LingCode.service.UserProgressService;
 
@@ -15,7 +17,7 @@ import com.modulos.LingCode.service.UserProgressService;
 @RequestMapping("/api/progress")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ProgressController {
-    
+
     private final UserProgressService progressService;
 
     public ProgressController(UserProgressService progressService) {
@@ -23,7 +25,7 @@ public class ProgressController {
     }
 
     /**
-      Obtiene el progreso general del usuario
+     * Obtiene el progreso general del usuario
      */
     @GetMapping("/{userId}")
     public UserProgress getProgress(@PathVariable String userId) {
@@ -36,8 +38,7 @@ public class ProgressController {
     @GetMapping("/{userId}/modules/{moduleId}")
     public int getModuleProgress(
             @PathVariable String userId,
-            @PathVariable String moduleId
-    ) {
+            @PathVariable String moduleId) {
         return progressService.calculateModuleProgress(userId, moduleId);
     }
 
@@ -51,5 +52,14 @@ public class ProgressController {
             @RequestParam int xp) {
 
         return progressService.completeLesson(userId, lessonId, xp);
+    }
+
+    @PostMapping("/complete-lesson")
+    public UserProgress completeLesson(@RequestBody CompleteLessonRequest request) {
+
+        return progressService.completeLesson(
+                request.getUserId(),
+                request.getLessonId(),
+                request.getXpReward());
     }
 }
