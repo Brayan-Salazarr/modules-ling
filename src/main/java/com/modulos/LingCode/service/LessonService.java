@@ -109,7 +109,7 @@ public class LessonService {
                                 break;
 
                         case "order":
-                                List<String> userWords = List.of(answer.split(" "));
+                                List<String> userWords = List.of(answer.trim().split("\\s+"));
                                 correct = userWords.equals(exercise.getCorrectOrder());
                                 break;
 
