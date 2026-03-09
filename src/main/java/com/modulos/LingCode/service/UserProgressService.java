@@ -38,6 +38,7 @@ public class UserProgressService  {
     }
 
     public UserProgress getProgress(String userId) {
+        System.out.println("USER ID: " + userId);
         return getOrCreateProgress(userId);
     }
 
