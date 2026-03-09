@@ -72,7 +72,59 @@ public class LessonService {
                                 20,
                                 List.of(exercise1, exercise2, exercise3, exercise4, exercise5));
 
+                List<OptionEntity> options1Lesson2 = List.of(
+                                new OptionEntity("Conectar", false),
+                                new OptionEntity("Crear", true),
+                                new OptionEntity("Actualizar", false),
+                                new OptionEntity("Eliminar", false));
+
+                ExerciseEntity exercise1Lesson2 = new ExerciseEntity("Create", options1Lesson2);
+
+                List<String> correctOrderLesson2 = List.of("Crear", "una", "nueva", "base", "de", "datos");
+                List<OptionEntity> scrambledLesson2 = List.of(
+                                new OptionEntity("una", false),
+                                new OptionEntity("Crear", false),
+                                new OptionEntity("nueva", false),
+                                new OptionEntity("datos", false),
+                                new OptionEntity("base", false),
+                                new OptionEntity("de", false));
+
+                ExerciseEntity exercise2Lesson2 = new ExerciseEntity(
+                                "Create a new database",
+                                "order",
+                                scrambledLesson2,
+                                correctOrderLesson2);
+
+                ExerciseEntity exercise3Lesson2 = new ExerciseEntity(
+                                "Crear una nueva base de datos",
+                                "Create a new database",
+                                "translate");
+
+                ExerciseEntity exercise4Lesson2 = new ExerciseEntity(
+                                "____ to create a new database",
+                                "CREATE",
+                                "fill");
+
+                ExerciseEntity exercise5Lesson2 = new ExerciseEntity(
+                                "Relaciona el comando con su significado",
+                                "match",
+                                List.of(
+                                                new MatchPair("Create database", "Crear base de datos"),
+                                                new MatchPair("Drop database", "Eliminar base de datos"),
+                                                new MatchPair("Alter table", "Modificar tabla"),
+                                                new MatchPair("Insert into", "Insertar datos"),
+                                                new MatchPair("Select", "Consultar datos")));
+
+                LessonEntity lesson2 = new LessonEntity(
+                                "2",
+                                "2",
+                                "Comandos MySQL",
+                                0,
+                                List.of(exercise1Lesson2, exercise2Lesson2, exercise3Lesson2, exercise4Lesson2,
+                                                exercise5Lesson2));
+
                 lessons.add(lesson1);
+                lessons.add(lesson2);
         }
 
         public List<LessonEntity> getLessonsByModule(String moduleId) {
