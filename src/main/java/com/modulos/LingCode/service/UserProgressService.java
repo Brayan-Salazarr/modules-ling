@@ -10,9 +10,9 @@ import com.modulos.LingCode.model.LessonEntity;
 import com.modulos.LingCode.model.UserProgress;
 
 @Service
-public class UserProgressService  {
-    
-      // Simula una base de datos en memoria
+public class UserProgressService {
+
+    // Simula una base de datos en memoria
     private Map<String, UserProgress> progressStore = new HashMap<>();
 
     private final LessonService lessonService;
@@ -42,7 +42,7 @@ public class UserProgressService  {
         return getOrCreateProgress(userId);
     }
 
-     public int calculateModuleProgress(String userId, String moduleId) {
+    public int calculateModuleProgress(String userId, String moduleId) {
 
         UserProgress progress = getOrCreateProgress(userId);
 
@@ -57,5 +57,22 @@ public class UserProgressService  {
                 .count();
 
         return (int) ((completed * 100) / lessons.size());
+    }
+
+    public int calculateTotalProgress(String userId) {
+
+        UserProgress progress = getOrCreateProgress(userId);
+
+        // Obtener todas las lecciones
+        List<LessonEntity> allLessons = lessonService.getAllLessons();
+        if (allLessons.isEmpty())
+            return 0;
+
+        // Contar cuántas completó
+        long completed = allLessons.stream()
+                .filter(l -> progress.getCompletedLessons().contains(l.getId()))
+                .count();
+
+        return (int) Math.round((completed * 100.0) / allLessons.size());
     }
 }

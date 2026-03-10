@@ -1,5 +1,7 @@
 package com.modulos.LingCode.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.modulos.LingCode.dto.CompleteLessonRequest;
+import com.modulos.LingCode.dto.ProgressResponse;
 import com.modulos.LingCode.model.UserProgress;
 import com.modulos.LingCode.service.UserProgressService;
 
@@ -40,6 +43,22 @@ public class ProgressController {
             @PathVariable String userId,
             @PathVariable String moduleId) {
         return progressService.calculateModuleProgress(userId, moduleId);
+    }
+
+   // Obtener progreso general del usuario
+    @GetMapping("/{userId}/total")
+    public ProgressResponse getTotalProgress(@PathVariable String userId) {
+
+        UserProgress progress = progressService.getOrCreateProgress(userId);
+        int percent = progressService.calculateTotalProgress(userId);
+
+        return new ProgressResponse(
+                progress.getTotalXp(),
+                progress.getCurrentStreak(),
+                progress.getLongestStreak(),
+                List.copyOf(progress.getCompletedLessons()),
+                percent
+        );
     }
 
     /**

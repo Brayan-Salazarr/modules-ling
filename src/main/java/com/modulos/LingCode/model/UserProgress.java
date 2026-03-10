@@ -13,6 +13,7 @@ public class UserProgress {
     private int currentStreak = 0;
     private int longestStreak = 0;
     private LocalDate lastCompletedDate;
+    private int progressPercent;
 
     public UserProgress(String userId) {
         this.userId = userId;
@@ -21,6 +22,7 @@ public class UserProgress {
         this.currentStreak = 0;
         this.longestStreak = 0;
         this.lastCompletedDate = null;
+        this.progressPercent = 0;
     }
 
     // ========================
@@ -48,6 +50,10 @@ public class UserProgress {
 
     public LocalDate getLastCompletedDate() {
         return lastCompletedDate;
+    }
+
+    public int getProgressPercent(){
+        return progressPercent;
     }
 
     // ========================

@@ -127,6 +127,10 @@ public class LessonService {
                 lessons.add(lesson2);
         }
 
+        public List<LessonEntity> getAllLessons() {
+                return lessons;
+        }
+
         public List<LessonEntity> getLessonsByModule(String moduleId) {
                 return lessons.stream()
                                 .filter(l -> l.getModuleId().equals(moduleId))
