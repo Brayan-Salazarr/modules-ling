@@ -137,6 +137,13 @@ public class LessonService {
                                 .toList();
         }
 
+        public LessonEntity getLessonById(String lessonId) {
+                return lessons.stream()
+                                .filter(l -> l.getId().equals(lessonId))
+                                .findFirst()
+                                .orElse(null);
+        }
+
         private List<UserProgress> usersProgress = new ArrayList<>();
 
         public boolean submitAnswer(String userId, String lessonId, int exerciseIndex, String answer) {

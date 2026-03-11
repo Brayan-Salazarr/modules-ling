@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.modulos.LingCode.dto.CompleteLessonRequest;
+import com.modulos.LingCode.dto.Progress;
 import com.modulos.LingCode.dto.ProgressResponse;
 import com.modulos.LingCode.model.UserProgress;
 import com.modulos.LingCode.service.UserProgressService;
@@ -35,6 +36,11 @@ public class ProgressController {
         return progressService.getProgress(userId);
     }
 
+    @GetMapping("/history/{userId}")
+    public List<Progress> getHistory(@PathVariable String userId) {
+        return progressService.getProgressHistory(userId);
+    }
+
     /**
      * Obtiene el progreso de un módulo específico
      */
@@ -45,7 +51,7 @@ public class ProgressController {
         return progressService.calculateModuleProgress(userId, moduleId);
     }
 
-   // Obtener progreso general del usuario
+    // Obtener progreso general del usuario
     @GetMapping("/{userId}/total")
     public ProgressResponse getTotalProgress(@PathVariable String userId) {
 
@@ -57,8 +63,7 @@ public class ProgressController {
                 progress.getCurrentStreak(),
                 progress.getLongestStreak(),
                 List.copyOf(progress.getCompletedLessons()),
-                percent
-        );
+                percent);
     }
 
     /**

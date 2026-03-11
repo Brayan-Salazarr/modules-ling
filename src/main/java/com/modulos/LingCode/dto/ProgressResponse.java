@@ -39,4 +39,18 @@ public class ProgressResponse {
     public int getProgressPercent() {
         return progressPercent;
     }
+
+    private List<Progress> progress;
+
+    public ProgressResponse(List<Progress> progress) {
+        this.progress = progress;
+    }
+
+    public List<Progress> getProgress() {
+        return progress;
+    }
+
+    public void setProgress(List<Progress> progress) {
+        this.progress = progress;
+    }
 }
