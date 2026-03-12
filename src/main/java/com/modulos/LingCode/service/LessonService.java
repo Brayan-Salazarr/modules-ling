@@ -51,7 +51,7 @@ public class LessonService {
                                 "translate");
 
                 ExerciseEntity exercise4 = new ExerciseEntity(
-                                "____ to initialize a new repository",
+                                "_______ to initialize a new repository",
                                 "Git init",
                                 "fill");
 
