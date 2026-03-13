@@ -123,8 +123,16 @@ public class LessonService {
                                 List.of(exercise1Lesson2, exercise2Lesson2, exercise3Lesson2, exercise4Lesson2,
                                                 exercise5Lesson2));
 
+                LessonEntity lesson3 = new LessonEntity(
+                                "3",
+                                "1",
+                                "Comandos GitHub",
+                                0,
+                                List.of());
+
                 lessons.add(lesson1);
                 lessons.add(lesson2);
+                lessons.add(lesson3);
         }
 
         public List<LessonEntity> getAllLessons() {
