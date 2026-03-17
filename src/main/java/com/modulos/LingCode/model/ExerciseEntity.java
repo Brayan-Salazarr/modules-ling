@@ -5,6 +5,7 @@ import java.util.List;
 public class ExerciseEntity {
 
     private String question;
+    private String description;
     private String type; // "multiple" | "order" | "translate" | "fill" | "match"
 
     private List<OptionEntity> options;
@@ -13,35 +14,37 @@ public class ExerciseEntity {
     private List<MatchPair> pairs;
 
     // Constructor para multiple choice
-    public ExerciseEntity(String question, List<OptionEntity> options) {
+    public ExerciseEntity(String question, String description, List<OptionEntity> options) {
         this.question = question;
+        this.description = description;
         this.type = "multiple";
         this.options = options;
     }
 
     // Constructor para ordenar palabras
-    public ExerciseEntity(String question,
-            String type,
-            List<OptionEntity> options,
-            List<String> correctOrder) {
+    public ExerciseEntity(String question, String description,
+            List<OptionEntity> options, List<String> correctOrder) {
         this.question = question;
-        this.type = type;
+        this.description = description;
+        this.type = "order";
         this.options = options;
         this.correctOrder = correctOrder;
     }
 
     // Constructor Translate y Fill
-    public ExerciseEntity(String question, String correctAnswer, String type) {
+    public ExerciseEntity(String question, String description,
+            String correctAnswer, String type) {
         this.question = question;
+        this.description = description;
         this.correctAnswer = correctAnswer;
         this.type = type;
     }
 
     // Constructor para match
-    public ExerciseEntity(String question,
-                          String type,
-                          List<MatchPair> pairs) {
+    public ExerciseEntity(String question, String description,
+            List<MatchPair> pairs, String type) {
         this.question = question;
+        this.description = description;
         this.type = type;
         this.pairs = pairs;
     }
@@ -68,5 +71,9 @@ public class ExerciseEntity {
 
     public List<MatchPair> getPairs() {
         return pairs;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

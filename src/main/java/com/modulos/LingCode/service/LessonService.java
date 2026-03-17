@@ -20,12 +20,12 @@ public class LessonService {
         public LessonService() {
 
                 List<OptionEntity> options1 = List.of(
-                                new OptionEntity("Borrar", false),
-                                new OptionEntity("Iniciar", true),
-                                new OptionEntity("Copiar", false),
-                                new OptionEntity("Estado", false));
+                                new OptionEntity("Borrar", false, ""),
+                                new OptionEntity("Iniciar", true, ""),
+                                new OptionEntity("Copiar", false, ""),
+                                new OptionEntity("Estado", false, ""));
 
-                ExerciseEntity exercise1 = new ExerciseEntity("Init", options1);
+                ExerciseEntity exercise1 = new ExerciseEntity("Init", "Selecciona el significado correcto del comando Git.", options1);
 
                 List<String> correctOrder = List.of(
                                 "Iniciar",
@@ -34,36 +34,40 @@ public class LessonService {
                                 "repositorio");
 
                 List<OptionEntity> scrambled = List.of(
-                                new OptionEntity("nuevo", false),
-                                new OptionEntity("Iniciar", false),
-                                new OptionEntity("repositorio", false),
-                                new OptionEntity("un", false));
+                                new OptionEntity("nuevo", false, "new"),
+                                new OptionEntity("Iniciar", false, "Initialize"),
+                                new OptionEntity("repositorio", false, "repository"),
+                                new OptionEntity("un", false , "a"));
 
                 ExerciseEntity exercise2 = new ExerciseEntity(
                                 "Initialize a new repository",
-                                "order",
+                                "Ordena las palabras correctamente.",
                                 scrambled,
                                 correctOrder);
 
                 ExerciseEntity exercise3 = new ExerciseEntity(
                                 "Iniciar un nuevo repositorio",
+                                "Escribe la traducción correcta en inglés.",
                                 "Initialize a new repository",
                                 "translate");
 
                 ExerciseEntity exercise4 = new ExerciseEntity(
                                 "_______ to initialize a new repository",
+                                "Completa el comando.",
                                 "Git init",
                                 "fill");
 
                 ExerciseEntity exercise5 = new ExerciseEntity(
                                 "Relaciona el comando con su significado",
-                                "match",
+                                "Selecciona el par correcto.",
                                 List.of(
                                                 new MatchPair("Git clone", "Clonar"),
                                                 new MatchPair("Git status", "Estado"),
                                                 new MatchPair("Git add", "Guardar"),
                                                 new MatchPair("Git init", "Iniciar"),
-                                                new MatchPair("Git commit", "Confirmar")));
+                                                new MatchPair("Git commit", "Confirmar")),
+                                        "match"
+                                );
 
                 LessonEntity lesson1 = new LessonEntity(
                                 "1",
@@ -73,47 +77,50 @@ public class LessonService {
                                 List.of(exercise1, exercise2, exercise3, exercise4, exercise5));
 
                 List<OptionEntity> options1Lesson2 = List.of(
-                                new OptionEntity("Conectar", false),
-                                new OptionEntity("Crear", true),
-                                new OptionEntity("Actualizar", false),
-                                new OptionEntity("Eliminar", false));
+                                new OptionEntity("Conectar", false, ""),
+                                new OptionEntity("Crear", true, ""),
+                                new OptionEntity("Actualizar", false, ""),
+                                new OptionEntity("Eliminar", false, ""));
 
-                ExerciseEntity exercise1Lesson2 = new ExerciseEntity("Create", options1Lesson2);
+                ExerciseEntity exercise1Lesson2 = new ExerciseEntity("Create","Selecciona el significado correcto del comando SQL.", options1Lesson2);
 
                 List<String> correctOrderLesson2 = List.of("Crear", "una", "nueva", "base", "de", "datos");
                 List<OptionEntity> scrambledLesson2 = List.of(
-                                new OptionEntity("una", false),
-                                new OptionEntity("Crear", false),
-                                new OptionEntity("nueva", false),
-                                new OptionEntity("datos", false),
-                                new OptionEntity("base", false),
-                                new OptionEntity("de", false));
+                                new OptionEntity("una", false, "a"),
+                                new OptionEntity("Crear", false, "create"),
+                                new OptionEntity("nueva", false, "new"),
+                                new OptionEntity("datos", false, "date"),
+                                new OptionEntity("base", false, "base"),
+                                new OptionEntity("de", false, ""));
 
                 ExerciseEntity exercise2Lesson2 = new ExerciseEntity(
                                 "Create a new database",
-                                "order",
+                                "Ordena las palabras correctamente.",
                                 scrambledLesson2,
                                 correctOrderLesson2);
 
                 ExerciseEntity exercise3Lesson2 = new ExerciseEntity(
                                 "Crear una nueva base de datos",
+                                "Escribe la traducción correcta en inglés.",
                                 "Create a new database",
                                 "translate");
 
                 ExerciseEntity exercise4Lesson2 = new ExerciseEntity(
                                 "____ to create a new database",
+                                "Completa el comando.",
                                 "CREATE",
                                 "fill");
 
                 ExerciseEntity exercise5Lesson2 = new ExerciseEntity(
                                 "Relaciona el comando con su significado",
-                                "match",
+                                "Selecciona el par correcto.",
                                 List.of(
                                                 new MatchPair("Create database", "Crear base de datos"),
                                                 new MatchPair("Drop database", "Eliminar base de datos"),
                                                 new MatchPair("Alter table", "Modificar tabla"),
                                                 new MatchPair("Insert into", "Insertar datos"),
-                                                new MatchPair("Select", "Consultar datos")));
+                                                new MatchPair("Select", "Consultar datos")),
+                                        "match");
 
                 LessonEntity lesson2 = new LessonEntity(
                                 "2",
