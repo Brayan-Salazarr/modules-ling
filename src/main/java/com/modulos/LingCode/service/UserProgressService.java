@@ -35,6 +35,11 @@ public class UserProgressService {
     }
 
     public UserProgress completeLesson(String userId, String lessonId, int xp) {
+
+        if (userId == null || userId.isEmpty()) {
+            return null; 
+        }
+
         UserProgress progress = getOrCreateProgress(userId);
 
         if (!progress.getCompletedLessons().contains(lessonId)) {
@@ -129,7 +134,7 @@ public class UserProgressService {
         long completedLessons = userProgress.getCompletedLessons()
                 .stream()
                 .filter(lessonId -> {
-                    LessonEntity lesson = lessonService.getLessonById(lessonId);
+                    LessonEntity lesson = lessonService.findLessonById(lessonId);
                     return lesson != null && lesson.getModuleId().equals(moduleId);
                 })
                 .count();

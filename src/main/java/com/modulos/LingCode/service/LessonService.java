@@ -4,7 +4,10 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.modulos.LingCode.model.ExerciseEntity;
 import com.modulos.LingCode.model.LessonEntity;
@@ -25,7 +28,9 @@ public class LessonService {
                                 new OptionEntity("Copiar", false, ""),
                                 new OptionEntity("Estado", false, ""));
 
-                ExerciseEntity exercise1 = new ExerciseEntity("Init", "Un desarrollador quiere comenzar a trabajar en un nuevo repositorio desde cero. ¿Qué acción representa el comando 'init'?", options1);
+                ExerciseEntity exercise1 = new ExerciseEntity("Init",
+                                "Un desarrollador quiere comenzar a trabajar en un nuevo repositorio desde cero. ¿Qué acción representa el comando 'init'?",
+                                options1);
 
                 List<String> correctOrder = List.of(
                                 "Iniciar",
@@ -37,7 +42,7 @@ public class LessonService {
                                 new OptionEntity("nuevo", false, "new"),
                                 new OptionEntity("Iniciar", false, "Initialize"),
                                 new OptionEntity("repositorio", false, "repository"),
-                                new OptionEntity("un", false , "a"));
+                                new OptionEntity("un", false, "a"));
 
                 ExerciseEntity exercise2 = new ExerciseEntity(
                                 "Initialize a new repository",
@@ -52,9 +57,9 @@ public class LessonService {
                                 "translate");
 
                 ExerciseEntity exercise4 = new ExerciseEntity(
-                                "_______ to initialize a new repository",
+                                "Git _____ to initialize a new repository",
                                 "Para iniciar un nuevo repositorio en Git, completa el comando correcto.",
-                                "Git init",
+                                "init",
                                 "fill");
 
                 ExerciseEntity exercise5 = new ExerciseEntity(
@@ -63,14 +68,13 @@ public class LessonService {
                                 List.of(
                                                 new MatchPair("Git clone", "Clonar"),
                                                 new MatchPair("Git status", "Estado"),
-                                                new MatchPair("Git add", "Guardar"),
+                                                new MatchPair("Git add", "Añadir"),
                                                 new MatchPair("Git init", "Iniciar"),
                                                 new MatchPair("Git commit", "Comentar")),
-                                        "match"
-                                );
+                                "match");
 
                 LessonEntity lesson1 = new LessonEntity(
-                                "1",
+                                "1-1",
                                 "1", // moduleId
                                 "Comandos GitHub",
                                 20,
@@ -82,7 +86,9 @@ public class LessonService {
                                 new OptionEntity("Actualizar", false, ""),
                                 new OptionEntity("Eliminar", false, ""));
 
-                ExerciseEntity exercise1Lesson2 = new ExerciseEntity("Create","Un desarrollador necesita crear una nueva base de datos para su aplicación. ¿Qué acción representa el comando 'CREATE'?", options1Lesson2);
+                ExerciseEntity exercise1Lesson2 = new ExerciseEntity("Create",
+                                "Un desarrollador necesita crear una nueva base de datos para su aplicación. ¿Qué acción representa el comando 'CREATE'?",
+                                options1Lesson2);
 
                 List<String> correctOrderLesson2 = List.of("Crear", "una", "nueva", "base", "de", "datos");
                 List<OptionEntity> scrambledLesson2 = List.of(
@@ -115,27 +121,77 @@ public class LessonService {
                                 "Relaciona el comando con su significado",
                                 "Un estudiante está aprendiendo comandos básicos de MySQL. Relaciona cada instrucción con la acción que realiza dentro de la base de datos.",
                                 List.of(
-                                                new MatchPair("Create database", "Crear base de datos"),
-                                                new MatchPair("Drop database", "Eliminar base de datos"),
-                                                new MatchPair("Alter table", "Modificar tabla"),
-                                                new MatchPair("Insert into", "Insertar datos"),
-                                                new MatchPair("Select", "Consultar datos")),
-                                        "match");
+                                                new MatchPair("create", "Crear"),
+                                                new MatchPair("drop", "Eliminar"),
+                                                new MatchPair("alter ", "Modificar"),
+                                                new MatchPair("Insert", "Insertar"),
+                                                new MatchPair("select", "Consultar")),
+                                "match");
 
                 LessonEntity lesson2 = new LessonEntity(
-                                "2",
+                                "2-1",
                                 "2",
                                 "Comandos MySQL",
                                 0,
                                 List.of(exercise1Lesson2, exercise2Lesson2, exercise3Lesson2, exercise4Lesson2,
                                                 exercise5Lesson2));
 
+                List<String> correctOrderLesson3 = List.of(
+                                "Clonar",
+                                "un",
+                                "repositorio");
+
+                List<OptionEntity> scrambledLesson3 = List.of(
+                                new OptionEntity("repositorio", false, "repository"),
+                                new OptionEntity("Clonar", false, "Clone"),
+                                new OptionEntity("un", false, "a"));
+
+                ExerciseEntity exercise1Lesson3 = new ExerciseEntity(
+                                "Clone a repository",
+                                "Para ejecutar correctamente el comando que permite copiar un repositorio, organiza las palabras en el orden adecuado.",
+                                scrambledLesson3,
+                                correctOrderLesson3);
+
+                ExerciseEntity exercise2Lesson3 = new ExerciseEntity(
+                                "Git _____ to copy a repository",
+                                "Completa el comando de Git que permite clonar un repositorio.",
+                                "clone",
+                                "fill");
+
+                ExerciseEntity exercise3Lesson3 = new ExerciseEntity(
+                                "Clonar un repositorio",
+                                "Escribe en inglés el comando que corresponde a esta acción.",
+                                "Clone a repository",
+                                "translate");
+
+                List<OptionEntity> options4Lesson3 = List.of(
+                                new OptionEntity("Clonar", true, ""),
+                                new OptionEntity("Eliminar", false, ""),
+                                new OptionEntity("Actualizar", false, ""),
+                                new OptionEntity("Crear", false, ""));
+
+                ExerciseEntity exercise4Lesson3 = new ExerciseEntity(
+                                "Clone",
+                                "Un desarrollador necesita copiar un repositorio existente en su equipo local. ¿Qué acción representa el comando 'clone'?",
+                                options4Lesson3);
+
+                ExerciseEntity exercise5Lesson3 = new ExerciseEntity(
+                                "Relaciona el comando con su significado",
+                                "Relaciona cada comando de Git con la acción que realiza.",
+                                List.of(
+                                                new MatchPair("Git clone", "Clonar repositorio"),
+                                                new MatchPair("Git status", "Ver estado"),
+                                                new MatchPair("Git add", "Añadir cambios"),
+                                                new MatchPair("Git commit", "Guardar cambios"),
+                                                new MatchPair("Git log", "Ver historial")),
+                                "match");
+
                 LessonEntity lesson3 = new LessonEntity(
-                                "3",
+                                "1-2",
                                 "1",
                                 "Comandos GitHub",
                                 0,
-                                List.of());
+                                List.of(exercise1Lesson3, exercise2Lesson3, exercise3Lesson3, exercise4Lesson3, exercise5Lesson3));
 
                 lessons.add(lesson1);
                 lessons.add(lesson2);
@@ -152,11 +208,15 @@ public class LessonService {
                                 .toList();
         }
 
-        public LessonEntity getLessonById(String lessonId) {
-                return lessons.stream()
-                                .filter(l -> l.getId().equals(lessonId))
-                                .findFirst()
-                                .orElse(null);
+        public LessonEntity getLessonById(String lessonId, User user) {
+
+                boolean isGuest = (user == null);
+
+                if (isGuest && !lessonId.equals("1")) {
+                        throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Debes registrarte");
+                }
+
+                return findLessonById(lessonId);
         }
 
         private List<UserProgress> usersProgress = new ArrayList<>();
@@ -221,5 +281,12 @@ public class LessonService {
                 return normalized.replaceAll("\\p{M}", "")
                                 .trim()
                                 .toLowerCase();
+        }
+
+        public LessonEntity findLessonById(String lessonId) {
+                return lessons.stream()
+                                .filter(l -> l.getId().equals(lessonId))
+                                .findFirst()
+                                .orElse(null);
         }
 }
