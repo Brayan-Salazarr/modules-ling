@@ -191,11 +191,157 @@ public class LessonService {
                                 "1",
                                 "Comandos GitHub",
                                 0,
-                                List.of(exercise1Lesson3, exercise2Lesson3, exercise3Lesson3, exercise4Lesson3, exercise5Lesson3));
+                                List.of(exercise1Lesson3, exercise2Lesson3, exercise3Lesson3, exercise4Lesson3,
+                                                exercise5Lesson3));
+
+                List<OptionEntity> lesson4Gitmul1 = List.of(
+                                new OptionEntity("Eliminar", false, ""),
+                                new OptionEntity("Actualizar", false, ""),
+                                new OptionEntity("Guardar", false, ""),
+                                new OptionEntity("Clonar", true, ""));
+
+                ExerciseEntity exercise1Gitmulti1 = new ExerciseEntity("Clone",
+                                "Un desarrollador está aprendiendo palabras en inglés usadas en programación. Si desea expresar la acción de copiar un proyecto, ¿qué significa la palabra 'clone'?",
+                                lesson4Gitmul1);
+
+                List<OptionEntity> lesson4Gitmul2 = List.of(
+                                new OptionEntity("Git add", false, ""),
+                                new OptionEntity("Git clone", true, ""),
+                                new OptionEntity("Git commit", false, ""),
+                                new OptionEntity("Git init", false, ""));
+
+                ExerciseEntity exercise1Gitmulti2 = new ExerciseEntity("Uso de la palabra",
+                                "Un desarrollador necesita expresar en inglés la acción de copiar un proyecto. ¿Qué palabra debería utilizar?",
+                                lesson4Gitmul2);
+
+                List<OptionEntity> lesson4Gitmul3 = List.of(
+                                new OptionEntity("Eliminar repositorio", false, ""),
+                                new OptionEntity("Guardar cambios", false, ""),
+                                new OptionEntity("Copiar un repositorio", true, ""),
+                                new OptionEntity("Actualizar infotmsción", false, ""));
+
+                ExerciseEntity exercise1Gitmulti3 = new ExerciseEntity("Comprensión de la palabra",
+                                "En el contexto de la programación, ¿cuál de las siguientes opciones describe mejor el significado de 'clone'?",
+                                lesson4Gitmul3);
+
+                List<String> correctOrder1Lesson4 = List.of(
+                                "Clone",
+                                "the",
+                                "repository");
+
+                List<OptionEntity> lesson4GitOrder1 = List.of(
+                                new OptionEntity("repository", false, "repositorio"),
+                                new OptionEntity("Clone", false, "Clonar"),
+                                new OptionEntity("the", false, "el"));
+
+                ExerciseEntity exercise2GitOrder1 = new ExerciseEntity(
+                                "Organiza la oración",
+                                "Un desarrollador desea expresar en inglés la acción de copiar un repositorio. Ordena correctamente las palabras para formar una oración adecuada.",
+                                lesson4GitOrder1,
+                                correctOrder1Lesson4);
+
+                List<String> correctOrder2Lesson4 = List.of(
+                                "Clone",
+                                "a",
+                                "project",
+                                "from",
+                                "GitHub");
+
+                List<OptionEntity> lesson4GitOrder2 = List.of(
+                                new OptionEntity("GitHub", false, "GitHub"),
+                                new OptionEntity("Clone", false, "Clonar"),
+                                new OptionEntity("from", false, "de"),
+                                new OptionEntity("project", false, "proyecto"),
+                                new OptionEntity("a", false, "un"));
+
+                ExerciseEntity exercise2GitOrder2 = new ExerciseEntity(
+                                "Construcción de oración",
+                                "Un desarrollador necesita escribir en inglés una instrucción relacionada con copiar un proyecto desde una plataforma. Ordena las palabras correctamente.",
+                                lesson4GitOrder2,
+                                correctOrder2Lesson4);
+
+                List<String> correctOrder3Lesson4 = List.of(
+                                "Clone",
+                                "the",
+                                "repository",
+                                "to",
+                                "your",
+                                "computer");
+
+                List<OptionEntity> lesson4GitOrder3 = List.of(
+                                new OptionEntity("your", false, "tú"),
+                                new OptionEntity("repository", false, "repositorio"),
+                                new OptionEntity("Clone", false, "Clonar"),
+                                new OptionEntity("computer", false, "computador"),
+                                new OptionEntity("to", false, "en"),
+                                new OptionEntity("the", false, "el"));
+
+                ExerciseEntity exercise2GitOrder3 = new ExerciseEntity(
+                                "Orden lógico",
+                                "Un desarrollador está escribiendo una instrucción en inglés para copiar un repositorio a su computador. Ordena las palabras para formar una oración correcta.",
+                                lesson4GitOrder3,
+                                correctOrder3Lesson4);
+
+                ExerciseEntity exercise3Lesson4Tras1 = new ExerciseEntity(
+                                "Clonar un repositorio",
+                                "Un desarrollador está aprendiendo vocabulario en inglés relacionado con tecnología. Traduce la siguiente frase al inglés:",
+                                "Clone a repository",
+                                "translate");
+
+                ExerciseEntity exercise3Lesson4Tras2 = new ExerciseEntity(
+                                "Clonar el repositorio desde GitHub",
+                                "Un desarrollador necesita escribir en inglés una instrucción para copiar un proyecto. Traduce la siguiente frase:",
+                                "Clone the repository from GitHub",
+                                "translate");
+
+                ExerciseEntity exercise3Lesson4Tras3 = new ExerciseEntity(
+                                "Clonar el repositorio en tu computadora",
+                                "Un desarrollador está documentando un proceso en inglés. Traduce correctamente la siguiente instrucción:",
+                                "Clone the repository to your computer",
+                                "translate");
+
+                ExerciseEntity exercise4Lesson4Fill1 = new ExerciseEntity(
+                                "_____ a repository",
+                                "Un desarrollador está aprendiendo vocabulario en inglés. Completa la oración correctamente:",
+                                "Clone",
+                                "fill");
+
+                ExerciseEntity exercise4Lesson4Fill2 = new ExerciseEntity(
+                                "_____ the repository from GitHub",
+                                "Un desarrollador necesita escribir una instrucción en inglés para copiar un proyecto. Completa la frase:",
+                                "Clone",
+                                "fill");
+
+                ExerciseEntity exercise4Lesson4Fill3 = new ExerciseEntity(
+                                "_____ the repository to your computer",
+                                "Un desarrollador está documentando un proceso en inglés. Completa la instrucción correctamente:",
+                                "Clone",
+                                "fill");
+
+                ExerciseEntity exercise5Lesson4Mat1 = new ExerciseEntity(
+                                "Relación de vocabulario",
+                                "Un desarrollador está aprendiendo palabras en inglés. Relaciona cada palabra con su significado en español.",
+                                List.of(
+                                                new MatchPair("clone", "clonar"),
+                                                new MatchPair("repository", "repositorio"),
+                                                new MatchPair("project", "proyecto"),
+                                                new MatchPair("computer", "computador")),
+                                "match");
+
+                LessonEntity lesson4 = new LessonEntity(
+                                "1-3",
+                                "1",
+                                "Comandos GitHub",
+                                0,
+                                List.of(exercise1Gitmulti1, exercise1Gitmulti2, exercise1Gitmulti3,
+                                                exercise2GitOrder1, exercise2GitOrder2, exercise2GitOrder3,
+                                                exercise3Lesson4Tras1, exercise3Lesson4Tras2, exercise3Lesson4Tras3,
+                                                exercise4Lesson4Fill1, exercise4Lesson4Fill2, exercise4Lesson4Fill3,exercise5Lesson4Mat1));
 
                 lessons.add(lesson1);
                 lessons.add(lesson2);
                 lessons.add(lesson3);
+                lessons.add(lesson4);
         }
 
         public List<LessonEntity> getAllLessons() {
