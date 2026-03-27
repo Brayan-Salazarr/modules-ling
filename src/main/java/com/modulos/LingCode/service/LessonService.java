@@ -148,7 +148,7 @@ public class LessonService {
 
                 ExerciseEntity exercise1Lesson3 = new ExerciseEntity(
                                 "Clone a repository",
-                                "Para ejecutar correctamente el comando que permite copiar un repositorio, organiza las palabras en el orden adecuado.",
+                                "Para ejecutar correctamente el comando que permite clonar un repositorio, organiza las palabras en el orden adecuado.",
                                 scrambledLesson3,
                                 correctOrderLesson3);
 
@@ -172,7 +172,7 @@ public class LessonService {
 
                 ExerciseEntity exercise4Lesson3 = new ExerciseEntity(
                                 "Clone",
-                                "Un desarrollador necesita copiar un repositorio existente en su equipo local. ¿Qué acción representa el comando 'clone'?",
+                                "Un desarrollador necesita clonar un repositorio existente en su equipo local. ¿Qué acción representa el comando 'clone'?",
                                 options4Lesson3);
 
                 ExerciseEntity exercise5Lesson3 = new ExerciseEntity(
@@ -201,7 +201,7 @@ public class LessonService {
                                 new OptionEntity("Clonar", true, ""));
 
                 ExerciseEntity exercise1Gitmulti1 = new ExerciseEntity("Clone",
-                                "Un desarrollador está aprendiendo palabras en inglés usadas en programación. Si desea expresar la acción de copiar un proyecto, ¿qué significa la palabra 'clone'?",
+                                "Un desarrollador está aprendiendo palabras en inglés usadas en programación. Si desea expresar la acción de clonar un proyecto, ¿qué significa la palabra 'clone'?",
                                 lesson4Gitmul1);
 
                 List<OptionEntity> lesson4Gitmul2 = List.of(
@@ -211,7 +211,7 @@ public class LessonService {
                                 new OptionEntity("Git init", false, ""));
 
                 ExerciseEntity exercise1Gitmulti2 = new ExerciseEntity("Uso de la palabra",
-                                "Un desarrollador necesita expresar en inglés la acción de copiar un proyecto. ¿Qué palabra debería utilizar?",
+                                "Un desarrollador necesita expresar en inglés la acción de clonar un proyecto. ¿Qué palabra debería utilizar?",
                                 lesson4Gitmul2);
 
                 List<OptionEntity> lesson4Gitmul3 = List.of(
@@ -220,7 +220,7 @@ public class LessonService {
                                 new OptionEntity("Copiar un repositorio", true, ""),
                                 new OptionEntity("Actualizar infotmsción", false, ""));
 
-                ExerciseEntity exercise1Gitmulti3 = new ExerciseEntity("Comprensión de la palabra",
+                ExerciseEntity exercise1Gitmulti3 = new ExerciseEntity("Clone",
                                 "En el contexto de la programación, ¿cuál de las siguientes opciones describe mejor el significado de 'clone'?",
                                 lesson4Gitmul3);
 
@@ -235,8 +235,8 @@ public class LessonService {
                                 new OptionEntity("the", false, "el"));
 
                 ExerciseEntity exercise2GitOrder1 = new ExerciseEntity(
-                                "Organiza la oración",
-                                "Un desarrollador desea expresar en inglés la acción de copiar un repositorio. Ordena correctamente las palabras para formar una oración adecuada.",
+                                "Clonar el respositorio",
+                                "Un desarrollador desea expresar en inglés la acción de clonar un repositorio. Ordena correctamente las palabras para formar una oración adecuada.",
                                 lesson4GitOrder1,
                                 correctOrder1Lesson4);
 
@@ -255,8 +255,8 @@ public class LessonService {
                                 new OptionEntity("a", false, "un"));
 
                 ExerciseEntity exercise2GitOrder2 = new ExerciseEntity(
-                                "Construcción de oración",
-                                "Un desarrollador necesita escribir en inglés una instrucción relacionada con copiar un proyecto desde una plataforma. Ordena las palabras correctamente.",
+                                "Clonar un proyecto de Github",
+                                "Un desarrollador necesita escribir en inglés una instrucción relacionada con clonar un proyecto desde una plataforma. Ordena las palabras correctamente.",
                                 lesson4GitOrder2,
                                 correctOrder2Lesson4);
 
@@ -277,8 +277,8 @@ public class LessonService {
                                 new OptionEntity("the", false, "el"));
 
                 ExerciseEntity exercise2GitOrder3 = new ExerciseEntity(
-                                "Orden lógico",
-                                "Un desarrollador está escribiendo una instrucción en inglés para copiar un repositorio a su computador. Ordena las palabras para formar una oración correcta.",
+                                "Clonar el repositorio en tú computador",
+                                "Un desarrollador está escribiendo una instrucción en inglés para clonar un repositorio a su computador. Ordena las palabras para formar una oración correcta.",
                                 lesson4GitOrder3,
                                 correctOrder3Lesson4);
 
@@ -290,7 +290,7 @@ public class LessonService {
 
                 ExerciseEntity exercise3Lesson4Tras2 = new ExerciseEntity(
                                 "Clonar el repositorio desde GitHub",
-                                "Un desarrollador necesita escribir en inglés una instrucción para copiar un proyecto. Traduce la siguiente frase:",
+                                "Un desarrollador necesita escribir en inglés una instrucción para clonar un proyecto. Traduce la siguiente frase:",
                                 "Clone the repository from GitHub",
                                 "translate");
 
@@ -299,18 +299,6 @@ public class LessonService {
                                 "Un desarrollador está documentando un proceso en inglés. Traduce correctamente la siguiente instrucción:",
                                 "Clone the repository to your computer",
                                 "translate");
-
-                ExerciseEntity exercise4Lesson4Fill1 = new ExerciseEntity(
-                                "_____ a repository",
-                                "Un desarrollador está aprendiendo vocabulario en inglés. Completa la oración correctamente:",
-                                "Clone",
-                                "fill");
-
-                ExerciseEntity exercise4Lesson4Fill2 = new ExerciseEntity(
-                                "_____ the repository from GitHub",
-                                "Un desarrollador necesita escribir una instrucción en inglés para copiar un proyecto. Completa la frase:",
-                                "Clone",
-                                "fill");
 
                 ExerciseEntity exercise4Lesson4Fill3 = new ExerciseEntity(
                                 "_____ the repository to your computer",
@@ -333,10 +321,10 @@ public class LessonService {
                                 "1",
                                 "Comandos GitHub",
                                 0,
-                                List.of(exercise1Gitmulti1, exercise1Gitmulti2, exercise1Gitmulti3,
-                                                exercise2GitOrder1, exercise2GitOrder2, exercise2GitOrder3,
-                                                exercise3Lesson4Tras1, exercise3Lesson4Tras2, exercise3Lesson4Tras3,
-                                                exercise4Lesson4Fill1, exercise4Lesson4Fill2, exercise4Lesson4Fill3,exercise5Lesson4Mat1));
+                                List.of(exercise2GitOrder1, exercise1Gitmulti1, exercise2GitOrder2, exercise1Gitmulti2,
+                                                exercise1Gitmulti3,exercise2GitOrder3,exercise3Lesson4Tras1,
+                                                exercise3Lesson4Tras2, exercise3Lesson4Tras3,
+                                                exercise4Lesson4Fill3, exercise5Lesson4Mat1));
 
                 lessons.add(lesson1);
                 lessons.add(lesson2);
