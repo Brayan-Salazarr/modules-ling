@@ -81,13 +81,13 @@ public class LessonService {
                                 List.of(exercise1, exercise2, exercise3, exercise4, exercise5));
 
                 List<OptionEntity> options1Lesson2 = List.of(
-                                new OptionEntity("Conectar", false, ""),
-                                new OptionEntity("Crear", true, ""),
-                                new OptionEntity("Actualizar", false, ""),
-                                new OptionEntity("Eliminar", false, ""));
+                                new OptionEntity("Connect", false, "conectar"),
+                                new OptionEntity("Create", true, "crear"),
+                                new OptionEntity("Update", false, "actualizar"),
+                                new OptionEntity("Delete", false, "eliminar"));
 
                 ExerciseEntity exercise1Lesson2 = new ExerciseEntity("Create",
-                                "Un desarrollador necesita crear una nueva base de datos para su aplicación. ¿Qué acción representa el comando 'CREATE'?",
+                                "Un desarrollador está aprendiendo vocabulario en inglés sobre bases de datos. ¿Qué significa la palabra 'create'?",
                                 options1Lesson2);
 
                 List<String> correctOrderLesson2 = List.of("Crear", "una", "nueva", "base", "de", "datos");
@@ -101,25 +101,25 @@ public class LessonService {
 
                 ExerciseEntity exercise2Lesson2 = new ExerciseEntity(
                                 "Create a new database",
-                                "Un desarrollador debe escribir correctamente un comando para crear una base de datos. Ordena las palabras para formar la instrucción adecuada en inglés.",
+                                "Un desarrollador debe escribir correctamente la traduccion para crear una base de datos. Ordena las palabras para formar la instrucción adecuada en inglés.",
                                 scrambledLesson2,
                                 correctOrderLesson2);
 
                 ExerciseEntity exercise3Lesson2 = new ExerciseEntity(
                                 "Crear una nueva base de datos",
-                                "Un desarrollador necesita ejecutar este comando en inglés dentro de un sistema gestor de bases de datos. Escribe la instrucción correcta.",
+                                "Traduce la siguiente frase al inglés:",
                                 "Create a new database",
                                 "translate");
 
                 ExerciseEntity exercise4Lesson2 = new ExerciseEntity(
                                 "____ to create a new database",
-                                "Para iniciar una nueva base de datos en MySQL, completa el comando con la palabra correcta.",
+                                "Completa la oración correctamente:",
                                 "CREATE",
                                 "fill");
 
                 ExerciseEntity exercise5Lesson2 = new ExerciseEntity(
                                 "Relaciona el comando con su significado",
-                                "Un estudiante está aprendiendo comandos básicos de MySQL. Relaciona cada instrucción con la acción que realiza dentro de la base de datos.",
+                                "Un desarrollador está aprendiendo vocabulario básicos de MySQL. Relaciona cada palabra en inglés con su significado en español.",
                                 List.of(
                                                 new MatchPair("create", "Crear"),
                                                 new MatchPair("drop", "Eliminar"),
@@ -137,30 +137,30 @@ public class LessonService {
                                                 exercise5Lesson2));
 
                 List<String> correctOrderLesson3 = List.of(
-                                "Clonar",
-                                "un",
-                                "repositorio");
+                                "Clone",
+                                "a",
+                                "repository");
 
                 List<OptionEntity> scrambledLesson3 = List.of(
-                                new OptionEntity("repositorio", false, "repository"),
-                                new OptionEntity("Clonar", false, "Clone"),
-                                new OptionEntity("un", false, "a"));
+                                new OptionEntity("repository", false, "repositorio"),
+                                new OptionEntity("Clone", false, "clonar"),
+                                new OptionEntity("a", false, "un"));
 
                 ExerciseEntity exercise1Lesson3 = new ExerciseEntity(
-                                "Clone a repository",
-                                "Para ejecutar correctamente el comando que permite clonar un repositorio, organiza las palabras en el orden adecuado.",
+                                "Construcción de oración",
+                                "Un desarrollador está aprendiendo vocabulario en inglés relacionado con tecnología. Ordena las palabras correctamente para formar una instrucción adecuada.",
                                 scrambledLesson3,
                                 correctOrderLesson3);
 
                 ExerciseEntity exercise2Lesson3 = new ExerciseEntity(
-                                "Git _____ to copy a repository",
-                                "Completa el comando de Git que permite clonar un repositorio.",
+                                "_____ to copy a repository",
+                                "Un desarrollador desea expresar en inglés la acción de copiar un repositorio. Completa la oración correctamente:",
                                 "clone",
                                 "fill");
 
                 ExerciseEntity exercise3Lesson3 = new ExerciseEntity(
                                 "Clonar un repositorio",
-                                "Escribe en inglés el comando que corresponde a esta acción.",
+                                "Un desarrollador necesita escribir en inglés una instrucción relacionada con copiar un proyecto. Traduce la siguiente frase:",
                                 "Clone a repository",
                                 "translate");
 
@@ -172,18 +172,18 @@ public class LessonService {
 
                 ExerciseEntity exercise4Lesson3 = new ExerciseEntity(
                                 "Clone",
-                                "Un desarrollador necesita clonar un repositorio existente en su equipo local. ¿Qué acción representa el comando 'clone'?",
+                                "Un desarrollador está aprendiendo vocabulario en inglés. ¿Qué significa la palabra 'clone'?",
                                 options4Lesson3);
 
                 ExerciseEntity exercise5Lesson3 = new ExerciseEntity(
-                                "Relaciona el comando con su significado",
-                                "Relaciona cada comando de Git con la acción que realiza.",
+                                "Relaciona de vocabulario",
+                                "Relaciona cada palabra en inglés con su significado en español.",
                                 List.of(
-                                                new MatchPair("Git clone", "Clonar repositorio"),
-                                                new MatchPair("Git status", "Ver estado"),
-                                                new MatchPair("Git add", "Añadir cambios"),
-                                                new MatchPair("Git commit", "Guardar cambios"),
-                                                new MatchPair("Git log", "Ver historial")),
+                                                new MatchPair("clone", "clonar"),
+                                                new MatchPair("status", "estado"),
+                                                new MatchPair("add", "guardar cambios"),
+                                                new MatchPair("commit", "Guardar cambios"),
+                                                new MatchPair("log", "historial")),
                                 "match");
 
                 LessonEntity lesson3 = new LessonEntity(
@@ -322,14 +322,216 @@ public class LessonService {
                                 "Comandos GitHub",
                                 0,
                                 List.of(exercise2GitOrder1, exercise1Gitmulti1, exercise2GitOrder2, exercise1Gitmulti2,
-                                                exercise1Gitmulti3,exercise2GitOrder3,exercise3Lesson4Tras1,
+                                                exercise1Gitmulti3, exercise2GitOrder3, exercise3Lesson4Tras1,
                                                 exercise3Lesson4Tras2, exercise3Lesson4Tras3,
                                                 exercise4Lesson4Fill3, exercise5Lesson4Mat1));
 
+                List<String> correctOrderLesson2my = List.of(
+                                "Insert",
+                                "data",
+                                "into",
+                                "a",
+                                "table");
+
+                List<OptionEntity> scrambledLesson2my = List.of(
+                                new OptionEntity("table", false, "tabla"),
+                                new OptionEntity("Insert", false, "insertar"),
+                                new OptionEntity("into", false, "en"),
+                                new OptionEntity("data", false, "datos"),
+                                new OptionEntity("a", false, "una"));
+
+                ExerciseEntity exercise2Lesson2my = new ExerciseEntity(
+                                "Construcción de oración",
+                                "Un desarrollador quiere expresar una acción en inglés. ¿Cuál es el orden correcto?",
+                                scrambledLesson2my,
+                                correctOrderLesson2my);
+
+                List<OptionEntity> options1Lesson2my = List.of(
+                                new OptionEntity("Insert", true, "insertar"),
+                                new OptionEntity("Delete", false, "eliminar"),
+                                new OptionEntity("Select", false, "consultar"),
+                                new OptionEntity("Update", false, "actualizar"));
+
+                ExerciseEntity exercise1Lesson2my = new ExerciseEntity(
+                                "Insert",
+                                "Un desarrollador está aprendiendo vocabulario en inglés. ¿Qué significa la palabra 'insert'?",
+                                options1Lesson2my);
+
+                ExerciseEntity exercise3Lesson2my = new ExerciseEntity(
+                                "Actualizar datos en una tabla",
+                                "Traduce la siguiente frase al inglés:",
+                                "Update data in a table",
+                                "translate");
+
+                ExerciseEntity exercise4Lesson2my = new ExerciseEntity(
+                                "_____ data from a table",
+                                "Completa la oración correctamente:",
+                                "Select",
+                                "fill");
+
+                ExerciseEntity exercise4Lesson2mys = new ExerciseEntity(
+                                "Relación de vocabulario",
+                                "Relaciona cada palabra en inglés con su significado en español.",
+                                List.of(
+                                                new MatchPair("insert", "insertar"),
+                                                new MatchPair("select", "consultar"),
+                                                new MatchPair("update", "actualizar"),
+                                                new MatchPair("delete", "eliminar"),
+                                                new MatchPair("table", "tabla")),
+                                "match");
+
+                LessonEntity lesson5 = new LessonEntity(
+                                "2-2",
+                                "2",
+                                "Comandos GitHub",
+                                0,
+                                List.of(exercise2Lesson2my, exercise1Lesson2my, exercise3Lesson2my, exercise4Lesson2my,
+                                                exercise4Lesson2mys));
+
+                // ORDEN
+                List<String> correctOrder1 = List.of(
+                                "Create",
+                                "a",
+                                "database");
+
+                List<OptionEntity> scrambled1 = List.of(
+                                new OptionEntity("database", false, "base de datos"),
+                                new OptionEntity("a", false, "una"),
+                                new OptionEntity("Create", false, "crear"));
+
+                ExerciseEntity ex1 = new ExerciseEntity(
+                                "Crear una base de datos",
+                                "Un desarrollador está aprendiendo inglés técnico. ¿Cuál es el orden correcto de la siguiente frase?",
+                                scrambled1,
+                                correctOrder1);
+
+                // OPCIÓN (SIGNIFICADO)
+                List<OptionEntity> options2 = List.of(
+                                new OptionEntity("crear", true, ""),
+                                new OptionEntity("eliminar", false, ""),
+                                new OptionEntity("consultar", false, ""),
+                                new OptionEntity("actualizar", false, ""));
+
+                ExerciseEntity ex2 = new ExerciseEntity(
+                                "Create",
+                                "Un desarrollador encuentra la palabra 'create' en un sistema. ¿Qué significa en español?",
+                                options2);
+
+                // TRADUCCIÓN
+                ExerciseEntity ex3 = new ExerciseEntity(
+                                "Insert data",
+                                "Traduce la siguiente frase al español:",
+                                "Insertar datos",
+                                "translate");
+
+                // FILL
+                ExerciseEntity ex4 = new ExerciseEntity(
+                                "_____ data",
+                                "Completa la frase en inglés para decir 'insertar datos':",
+                                "Insert",
+                                "fill");
+
+                // MATCH
+                ExerciseEntity ex5 = new ExerciseEntity(
+                                "Relación de vocabulario",
+                                "Relaciona cada palabra en inglés con su significado en español.",
+                                List.of(
+                                                new MatchPair("create", "crear"),
+                                                new MatchPair("insert", "insertar"),
+                                                new MatchPair("select", "consultar"),
+                                                new MatchPair("update", "actualizar"),
+                                                new MatchPair("delete", "eliminar")),
+                                "match");
+
+                // OPCIÓN
+                List<OptionEntity> options6 = List.of(
+                                new OptionEntity("consultar", true, ""),
+                                new OptionEntity("insertar", false, ""),
+                                new OptionEntity("eliminar", false, ""),
+                                new OptionEntity("crear", false, ""));
+
+                ExerciseEntity ex6 = new ExerciseEntity(
+                                "Select",
+                                "Un estudiante ve la palabra 'select'. ¿Qué significa en español?",
+                                options6);
+
+                // ORDEN
+                List<String> correctOrder7 = List.of(
+                                "Delete",
+                                "data");
+
+                List<OptionEntity> scrambled7 = List.of(
+                                new OptionEntity("data", false, "datos"),
+                                new OptionEntity("Delete", false, "eliminar"));
+
+                ExerciseEntity ex7 = new ExerciseEntity(
+                                "eliminar datos",
+                                "Ordena la frase en inglés para decir:",
+                                scrambled7,
+                                correctOrder7);
+
+                // TRADUCCIÓN
+                ExerciseEntity ex8 = new ExerciseEntity(
+                                "Update data",
+                                "Traduce la siguiente frase al español:",
+                                "Actualizar datos",
+                                "translate");
+
+                // FILL
+                ExerciseEntity ex9 = new ExerciseEntity(
+                                "_____ data",
+                                "Completa la frase en inglés para decir 'consultar datos':",
+                                "Select",
+                                "fill");
+
+                // OPCIÓN
+                List<OptionEntity> options10 = List.of(
+                                new OptionEntity("eliminar", true, ""),
+                                new OptionEntity("crear", false, ""),
+                                new OptionEntity("consultar", false, ""),
+                                new OptionEntity("insertar", false, ""));
+
+                ExerciseEntity ex10 = new ExerciseEntity(
+                                "Delete",
+                                "Un estudiante quiere entender la palabra 'delete'. ¿Qué significa?",
+                                options10);
+
+                // MATCH (OBJETOS)
+                ExerciseEntity ex11 = new ExerciseEntity(
+                                "Relación de vocabulario",
+                                "Relaciona las palabras con su significado.",
+                                List.of(
+                                                new MatchPair("database", "base de datos"),
+                                                new MatchPair("table", "tabla"),
+                                                new MatchPair("data", "datos")),
+                                "match");
+
+                // OPCIÓN FINAL
+                List<OptionEntity> options12 = List.of(
+                                new OptionEntity("actualizar", true, ""),
+                                new OptionEntity("consultar", false, ""),
+                                new OptionEntity("insertar", false, ""),
+                                new OptionEntity("crear", false, ""));
+
+                ExerciseEntity ex12 = new ExerciseEntity(
+                                "Update",
+                                "Un desaarrollador ve la palabra 'update'. ¿Qué significa en español?",
+                                options12);
+
+                // LECCIÓN
+                LessonEntity lesson6 = new LessonEntity(
+                                "2-3",
+                                "2",
+                                "Vocabulario en inglés (MySQL)",
+                                0,
+                                List.of(ex1, ex2, ex3, ex4, ex5, ex6,
+                                        ex7, ex8, ex9, ex10, ex11, ex12));
                 lessons.add(lesson1);
                 lessons.add(lesson2);
                 lessons.add(lesson3);
                 lessons.add(lesson4);
+                lessons.add(lesson5);
+                lessons.add(lesson6);
         }
 
         public List<LessonEntity> getAllLessons() {
