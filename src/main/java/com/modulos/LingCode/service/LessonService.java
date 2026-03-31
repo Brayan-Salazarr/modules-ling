@@ -57,7 +57,7 @@ public class LessonService {
                                 "translate");
 
                 ExerciseEntity exercise4 = new ExerciseEntity(
-                                "Git _____ to initialize a new repository",
+                                "Git ____ to initialize a new repository",
                                 "Para iniciar un nuevo repositorio en Git, completa el comando correcto.",
                                 "init",
                                 "fill");
@@ -153,7 +153,7 @@ public class LessonService {
                                 correctOrderLesson3);
 
                 ExerciseEntity exercise2Lesson3 = new ExerciseEntity(
-                                "_____ to copy a repository",
+                                "____ to copy a repository",
                                 "Un desarrollador desea expresar en inglés la acción de copiar un repositorio. Completa la oración correctamente:",
                                 "clone",
                                 "fill");
@@ -301,7 +301,7 @@ public class LessonService {
                                 "translate");
 
                 ExerciseEntity exercise4Lesson4Fill3 = new ExerciseEntity(
-                                "_____ the repository to your computer",
+                                "____ the repository to your computer",
                                 "Un desarrollador está documentando un proceso en inglés. Completa la instrucción correctamente:",
                                 "Clone",
                                 "fill");
@@ -364,7 +364,7 @@ public class LessonService {
                                 "translate");
 
                 ExerciseEntity exercise4Lesson2my = new ExerciseEntity(
-                                "_____ data from a table",
+                                "____ data from a table",
                                 "Completa la oración correctamente:",
                                 "Select",
                                 "fill");
@@ -426,7 +426,7 @@ public class LessonService {
 
                 // FILL
                 ExerciseEntity ex4 = new ExerciseEntity(
-                                "_____ data",
+                                "____ data",
                                 "Completa la frase en inglés para decir 'insertar datos':",
                                 "Insert",
                                 "fill");
@@ -479,7 +479,7 @@ public class LessonService {
 
                 // FILL
                 ExerciseEntity ex9 = new ExerciseEntity(
-                                "_____ data",
+                                "____ data",
                                 "Completa la frase en inglés para decir 'consultar datos':",
                                 "Select",
                                 "fill");
