@@ -20,31 +20,35 @@ public class SupaBaseService {
 
     public String getSignedUrl(String filePath) {
 
-        try {
+    try {
 
-            String endpoint = supabaseUrl + "/storage/v1/object/sign/" + bucketName + "/" + filePath;
+        String endpoint = supabaseUrl + "/storage/v1/object/sign/" 
+                + bucketName + "/" + filePath;
 
-            RestTemplate restTemplate = new RestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
 
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.setBearerAuth(serviceRoleKey);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setBearerAuth(serviceRoleKey);
 
-            Map<String, Object> body = Map.of("expiresIn", 300);
-            HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
+        Map<String, Object> body = Map.of("expiresIn", 300);
+        HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
 
-            ResponseEntity<Map> response = restTemplate.postForEntity(endpoint, request, Map.class);
+        ResponseEntity<Map> response = 
+                restTemplate.postForEntity(endpoint, request, Map.class);
 
-            Map<String, Object> responseBody = response.getBody();
+        Map<String, Object> responseBody = response.getBody();
 
-            if (responseBody == null || !responseBody.containsKey("signedURL")) {
-                throw new RuntimeException("No se pudo generar el link");
-            }
-
-            return (String) responseBody.get("signedURL");
-
-        } catch (Exception e) {
-            throw new RuntimeException("Error al generar link desde Supabase", e);
+        if (responseBody == null || !responseBody.containsKey("signedURL")) {
+            throw new RuntimeException("No se pudo generar el link");
         }
+
+        String signedPath = (String) responseBody.get("signedURL");
+
+        return supabaseUrl + "/storage/v1" + signedPath;
+
+    } catch (Exception e) {
+        throw new RuntimeException("Error al generar link desde Supabase", e);
     }
+}
 }

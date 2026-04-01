@@ -8,6 +8,7 @@ import com.modulos.LingCode.service.SupaBaseService;
 
 @RestController
 @RequestMapping("/api/material")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MaterialController {
 
     private final SupaBaseService supaBaseService;
